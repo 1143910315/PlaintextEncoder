@@ -27,7 +27,14 @@
                 SemanticProperties.Description="Welcome to dot net Multi platform App U I"
                 FontSize="18"
                 HorizontalOptions="Center" />
-
+            
+            <Editor
+                x:Name="InputText"
+                TextChanged="InputText_TextChanged" />
+            
+            <Editor
+                x:Name="OutputText" />
+            
             <Button
                 x:Name="CounterBtn"
                 Text="Click me"
