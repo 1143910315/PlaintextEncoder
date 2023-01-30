@@ -1,4 +1,6 @@
-﻿using ToolGood.Words.Pinyin;
+﻿using PlaintextEncoder.ViewModel;
+using System.Collections.ObjectModel;
+using ToolGood.Words.Pinyin;
 
 namespace PlaintextEncoder;
 
@@ -10,6 +12,13 @@ public partial class MainPage : ContentPage {
     }
 
     private void OnCounterClicked(object sender, EventArgs e) {
+        if (PinyinView.ItemsSource is ObservableCollection<Pinyin> pinyinList) {
+            pinyinList.Clear();
+            List<string> list = WordsHelper.GetAllPinyin('其', true);
+            for (int i = 0; i < list.Count; i++) {
+                pinyinList.Add(new Pinyin(list[i].ToLower()));
+            }
+        }
         count++;
 
         if (count == 1) {
