@@ -30,7 +30,8 @@
                 <CollectionView.ItemTemplate>
                     <DataTemplate>
                         <Entry
-                            Text="{Binding Value}" />
+                            Text="{Binding Value}"
+                            WidthRequest="130" />
                     </DataTemplate>
                 </CollectionView.ItemTemplate>
             </CollectionView>
@@ -43,7 +44,8 @@
                 <CollectionView.ItemTemplate>
                     <DataTemplate>
                         <Entry
-                            Text="{Binding Value}" />
+                            Text="{Binding Value}"
+                            WidthRequest="130" />
                     </DataTemplate>
                 </CollectionView.ItemTemplate>
             </CollectionView>
