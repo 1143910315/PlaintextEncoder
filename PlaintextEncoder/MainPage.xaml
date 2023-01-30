@@ -7,6 +7,8 @@
     <ContentPage.Resources>
         <viewModel:PinyinViewModel
             x:Key="Pinyin" />
+        <viewModel:PinyinViewModel
+            x:Key="PinyinEncode" />
     </ContentPage.Resources>
     <ScrollView>
         <VerticalStackLayout
@@ -27,7 +29,20 @@
                 ItemsSource="{Binding Source={StaticResource Pinyin}, Path=AllPinyin}">
                 <CollectionView.ItemTemplate>
                     <DataTemplate>
-                        <Label
+                        <Entry
+                            Text="{Binding Value}" />
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+
+
+            <CollectionView
+                x:Name="PinyinEncodeView"
+                ItemsLayout="HorizontalList"
+                ItemsSource="{Binding Source={StaticResource PinyinEncode}, Path=AllPinyin}">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Entry
                             Text="{Binding Value}" />
                     </DataTemplate>
                 </CollectionView.ItemTemplate>
